@@ -1,0 +1,180 @@
+/* MUL Salary Tracker - Custom Styles - TeamHub Redesign */
+
+/* Layout */
+.sidebar-transition {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Cards - TeamHub clean white style */
+.kpi-card {
+    @apply bg-card border border-border rounded-2xl p-5 transition-all duration-200 shadow-card;
+}
+
+.kpi-card:hover {
+    @apply shadow-card-hover -translate-y-0.5;
+}
+
+/* Tables - refined */
+.data-table {
+    @apply w-full text-sm;
+}
+
+.data-table th {
+    @apply text-left font-semibold text-muted-foreground p-3 border-b border-border text-xs uppercase tracking-wider;
+}
+
+.data-table td {
+    @apply p-3 border-b border-border/60;
+}
+
+.data-table tr:last-child td {
+    @apply border-b-0;
+}
+
+.data-table tr:hover td {
+    background-color: hsl(var(--primary) / 0.03);
+}
+
+/* Form Inputs - TeamHub rounded style */
+.form-input {
+    @apply h-10 w-full rounded-xl border border-input bg-background px-3.5 py-2 text-sm 
+           ring-offset-background placeholder:text-muted-foreground 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+           focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
+           transition-colors;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl 
+           bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground 
+           ring-offset-background transition-all 
+           hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 
+           focus-visible:ring-ring focus-visible:ring-offset-2 
+           disabled:pointer-events-none disabled:opacity-50 active:scale-95;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl 
+           border border-input bg-background px-4 py-2 text-sm font-medium 
+           ring-offset-background transition-all 
+           hover:bg-accent hover:text-accent-foreground 
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+           focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+           active:scale-95;
+}
+
+/* Charts */
+.recharts-wrapper {
+    @apply w-full;
+}
+
+/* Animation utilities */
+.animate-in {
+    animation: animate-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes animate-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Financial data styling */
+.currency-positive {
+    @apply text-emerald-600 dark:text-emerald-400;
+}
+
+.currency-negative {
+    @apply text-red-500 dark:text-red-400;
+}
+
+/* Sidebar nav items */
+.nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl
+           transition-all duration-200;
+    color: hsl(var(--sidebar-text));
+}
+
+.nav-item:hover {
+    @apply bg-muted;
+    color: hsl(var(--foreground));
+}
+
+.nav-item.active {
+    color: hsl(var(--sidebar-active));
+    background-color: hsl(var(--sidebar-active-bg));
+    @apply font-semibold;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .sidebar-mobile {
+        @apply fixed inset-y-0 left-0 z-50 w-64 transform -translate-x-full;
+    }
+    
+    .sidebar-mobile.open {
+        @apply translate-x-0;
+    }
+}
+
+/* Print styles for payslip */
+@media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.2);
+    border-radius: 99px;
+}
+
+/* Upload dropzone */
+.dropzone {
+    @apply border-2 border-dashed border-border rounded-2xl p-8 text-center 
+           transition-all duration-200 cursor-pointer;
+}
+
+.dropzone:hover,
+.dropzone.active {
+    border-color: hsl(var(--primary));
+    background-color: hsl(var(--primary) / 0.04);
+}
+
+/* Calendar picker styles */
+.rdp {
+    @apply p-3;
+}
+
+.rdp-day_selected {
+    @apply bg-primary text-primary-foreground;
+}
+
+/* Badge variants */
+.badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+}
+
+.badge-success {
+    background: hsl(231 75% 92%);
+    color: hsl(231 75% 35%);
+}
+
+.badge-warning {
+    @apply bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400;
+}
+
+.badge-error {
+    @apply bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400;
+}
+
+/* Stat card accent */
+.stat-accent {
+    border-left: 3px solid hsl(var(--primary));
+}
