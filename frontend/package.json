@@ -56,13 +56,13 @@
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
-    "zod": "^3.24.4"
+    "zod": "^3.24.4",
+    "terser-webpack-plugin": "5.3.10"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
-    "postinstall": "node -e \"const fs=require('fs'),path=require('path');const src=path.join('node_modules','ajv','dist');['ajv-formats','terser-webpack-plugin','schema-utils'].forEach(pkg=>{  const dest=path.join('node_modules',pkg,'node_modules','ajv','dist');  if(!fs.existsSync(dest)) return;  const compile=path.join(dest,'compile');  if(!fs.existsSync(compile)) fs.mkdirSync(compile,{recursive:true});  fs.readdirSync(path.join(src,'compile')).forEach(f=>{    fs.copyFileSync(path.join(src,'compile',f),path.join(compile,f));  });});\""
+    "test": "craco test"
   },
   "browserslist": {
     "production": [
@@ -90,10 +90,5 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.17"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "resolutions": {
-    "ajv": "6.12.6",
-    "ajv-keywords": "3.5.2",
-    "ajv-formats": "2.1.1"
-  }
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
